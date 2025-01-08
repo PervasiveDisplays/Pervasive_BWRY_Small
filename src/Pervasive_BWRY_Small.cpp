@@ -422,9 +422,5 @@ void Pervasive_BWRY_Small::updateNormal(FRAMEBUFFER_CONST_TYPE frame, uint32_t s
     COG_stopDCDC(); // Power off
 
     // hV_HAL_SPI_end(); // With unicity check
-    if (u_suspendMode == POWER_MODE_AUTO)
-    {
-        b_suspend();
-    }
 }
 
