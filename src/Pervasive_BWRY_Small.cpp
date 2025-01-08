@@ -8,8 +8,9 @@
 //
 // Created by Rei Vilo, 21 Nov 2024
 //
-// Copyright (c) Rei Vilo, 2010-2024
+// Copyright (c) Pervasive Displays, 2010-2025
 // Licence All rights reserved
+// Portions (c) Rei Vilo, 2010-2025
 //
 // See Pervasive_BWRY_Small.h for references
 //
@@ -31,12 +32,6 @@
 //
 // === COG section
 //
-/// @cond NOT_PUBLIC
-/// @see
-/// * ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf
-/// * ApplicationNote_E5_SE_smallSize_EPD_v01_20230522
-//
-
 //
 // --- Small screens with Q film
 //
@@ -323,7 +318,7 @@ void Pervasive_BWRY_Small::COG_initial()
     }
 }
 
-void Pervasive_BWRY_Small::COG_sendImageData(FRAMEBUFFER_CONST_TYPE frame, uint32_t sizeFrame) // First frame, blackBuffer
+void Pervasive_BWRY_Small::COG_sendImageDataNormal(FRAMEBUFFER_CONST_TYPE frame, uint32_t sizeFrame) // First frame, blackBuffer
 {
     // Application note § 4. Input image to the EPD
     // b_sendIndexData(0x10, s_newImage, u_pageColourSize); // First frame, blackBuffer
@@ -416,11 +411,9 @@ void Pervasive_BWRY_Small::updateNormal(FRAMEBUFFER_CONST_TYPE frame, uint32_t s
     hV_HAL_SPI_begin(16000000); // Fast 16 MHz, with unicity check
 
     COG_initial(); // Initialise
-    COG_sendImageData(frame, sizeFrame);
+    COG_sendImageDataNormal(frame, sizeFrame);
 
     COG_update(); // Update
-    COG_stopDCDC(); // Power off
-
-    // hV_HAL_SPI_end(); // With unicity check
+    COG_stopDCDC(); // Power DC/DC off
 }
 

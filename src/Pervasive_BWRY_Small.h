@@ -4,14 +4,12 @@
 ///
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
-/// * ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf
-/// * ApplicationNote_E5_SE_smallSize_EPD_v01_20230522
 ///
 /// @author Rei Vilo
-/// @date 21 Nov 2024
-/// @version 900
+/// @date 21 Jan 2025
+/// @version 902
 ///
-/// @copyright (c) Rei Vilo, 2010-2024
+/// @copyright (c) Pervasive Displays, 2010-2025
 /// @copyright All rights reserved
 /// @copyright For exclusive use with Pervasive Displays screens
 ///
@@ -33,12 +31,15 @@
 /// * Documentation
 /// @n All rights reserved
 ///
+/// @see Application notes
+/// * [Application Note Small Size for Spectra 4](https://www.pervasivedisplays.com/wp-content/uploads/2023/02/ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf)
+///
 
 // SDK and configuration
 #include "PDLS_Common.h"
 
-#if (PDLS_COMMON_RELEASE < 900)
-#error Required PDLS_COMMON_RELEASE 900
+#if (PDLS_COMMON_RELEASE < 902)
+#error Required PDLS_COMMON_RELEASE 902
 #endif // PDLS_COMMON_RELEASE
 
 // Driver
@@ -48,7 +49,7 @@
 ///
 /// @brief Library release number
 ///
-#define DRIVER_BWRY_SMALL_RELEASE 900
+#define DRIVER_BWRY_SMALL_RELEASE 902
 
 ///
 /// @name List of supported screens
@@ -58,10 +59,10 @@
 /// @see https://www.pervasivedisplays.com/products/?_sft_etc_itc=itc&_sft_product_colour=black-white-red-yellow
 /// @{
 ///
-#define eScreen_EPD_154_QS_0F SCREEN(SIZE_154, FILM_Q, DRIVER_F) ///< reference xE2154QS0Fx
-#define eScreen_EPD_213_QS_0F SCREEN(SIZE_213, FILM_Q, DRIVER_F) ///< reference xE2213QS0Fx
-#define eScreen_EPD_266_QS_0F SCREEN(SIZE_266, FILM_Q, DRIVER_F) ///< reference xE2266QS0Fx
-#define eScreen_EPD_417_QS_0A SCREEN(SIZE_417, FILM_Q, DRIVER_A) ///< reference xE2417QS0Ax
+#define eScreen_EPD_154_QS_0F SCREEN(SIZE_154, FILM_Q, DRIVER_F) ///< reference 154-QS-0F
+#define eScreen_EPD_213_QS_0F SCREEN(SIZE_213, FILM_Q, DRIVER_F) ///< reference 213-QS-0F
+#define eScreen_EPD_266_QS_0F SCREEN(SIZE_266, FILM_Q, DRIVER_F) ///< reference 266-QS-0F
+#define eScreen_EPD_417_QS_0A SCREEN(SIZE_417, FILM_Q, DRIVER_A) ///< reference 417-QS-0A
 /// @}
 
 ///
@@ -83,7 +84,8 @@
 ///
 class Pervasive_BWRY_Small : public Driver_EPD_Virtual
 {
-public:
+  public:
+
     ///
     /// @brief Constructor
     /// @param eScreen_EPD
@@ -118,9 +120,9 @@ public:
 
     /// @}
 
-protected:
+  protected:
 
-private:
+  private:
 
     // Variables and functions specific to the screen
     uint8_t COG_data[112]; // OTP
@@ -128,7 +130,7 @@ private:
     void COG_reset();
     void COG_getDataOTP();
     void COG_initial();
-    void COG_sendImageData(FRAMEBUFFER_CONST_TYPE frame, uint32_t sizeFrame);
+    void COG_sendImageDataNormal(FRAMEBUFFER_CONST_TYPE frame, uint32_t sizeFrame);
     void COG_update();
     void COG_stopDCDC();
 };

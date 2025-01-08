@@ -4,20 +4,20 @@ The driver is specifically designed for the [Pervasive Displays](https://www.per
 
 ![](https://pdls.pervasivedisplays.com/userguide/img/Logo_PDI_text_320.png)
 
-The **Driver_EPD_BWRY_Small** supports the screens
+The **Pervasive_BWRY_Small** supports the screens
 
 * Pervasive Displays iTC colour [black-white-red-yellow](https://www.pervasivedisplays.com/products/?_sft_product_colour=black-white-red-yellow) screens (film `Q`) with sizes of 1.54, 2.13 and 2.66";
 
-the boards
+the extension boards
 
-* Pervasive Displays [EPD Extension Kit Gen 3 (EXT3 or EXT3.1)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-3-EXT3/).
+* Pervasive Displays [EPD Extension Kit Gen 3 (EXT3 or EXT3.1)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-3-EXT3/),
 * Pervasive Displays [EPD Extension Kit Gen 4 (EXT4)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-4-EXT4/) and EXT4-to-Nano adapter boards;
 
-the kits 
+the development kits
 
 * [EPD Pico Kit (EPDK)](https://www.pervasivedisplays.com/product/epd-pico-kit-epdk/), which includes a Raspberry Pi Pico RP2040, an EXT3-1 extension board and a 2.66" monochrome panel,
-* [EPD Pico Kit Touch (EPDK-271-Touch)](https://www.pervasivedisplays.com/product/touch-expansion-board-ext3-touch/#tab-3), which includes a Raspberry Pi Pico RP2040, the EXT3.1 and EXT3-Touch extension boards and a 2.71"-Touch monochrome panel with embedded fast update and capacitive touch,
-* [E-Paper Display Kit for Matter (EPDK-Matter)](https://www.pervasivedisplays.com), which includes a Pervasive Displays [EPD Extension Kit Gen 4 (EXT4)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-3-EXT3/) and a Pervasive Displays EXT4-to-Nano adapter boards, a Pervasive Displays [2.9″ 384x168 E-ink monochrome high-definition](https://www.pervasivedisplays.com/product/2-9-e-ink-displays/) with embedded fast update and wide temperature display, an [Arduino Nano Matter](https://store.arduino.cc/pages/nano-matter) board based on [Silicon Labs MGM240S](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-modules).
+* [EPD Pico Kit Touch (EPDK-271-Touch)](https://www.pervasivedisplays.com/product/touch-expansion-board-ext3-touch/#tab-3), which includes an EXT3.1 extension board, an EXT3-Touch expansion board, and a 2.71"-Touch monochrome panel with embedded fast update and capacitive touch,
+* [E-Paper Development Kit for Matter (EPDK-Matter)](https://www.pervasivedisplays.com), which includes a Pervasive Displays [EPD Extension Kit Gen 4 (EXT4)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-4-EXT4/) and a Pervasive Displays EXT4-to-Nano adapter boards, a Pervasive Displays [2.9″ 384x168 E-ink monochrome high-definition](https://www.pervasivedisplays.com/product/2-9-e-ink-displays/) with embedded fast update and wide temperature display, an [Arduino Nano Matter](https://store.arduino.cc/pages/nano-matter) board based on [Silicon Labs MGM240S](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-modules).
 
 ## Features
 
@@ -26,13 +26,13 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 ## Documentation
 
 * [Application Note Small Size for Spectra 4](https://www.pervasivedisplays.com/wp-content/uploads/2023/02/ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf)
-* [Wiki](https://docs.pervasivedisplays.com/) 
+* [Pervasive Displays Technical Wiki](https://docs.pervasivedisplays.com/) 
 * [Pervasive Displays, Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
 * [Product line](https://www.pervasivedisplays.com/products/)
 
 ## Support
 
-* Please refer to [Support Service](https://www.pervasivedisplays.com/technical-support/).
+* Please refer to the [Support Service](https://www.pervasivedisplays.com/technical-support/).
 
 ## Installation
 
@@ -64,11 +64,11 @@ Hardware
 
 ## Licence
 
-**Copyright** &copy; Rei Vilo, 2010-2024
+**Copyright** &copy; Pervasive Displays, 2010-2025
 
 For exclusive use with Pervasive Displays screens
 
 **Licence** [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](./LICENCE.md)
 
-**Portions** &copy; Pervasive Displays, 2010-2024
+**Portions** &copy; Rei Vilo, 2010-2025
 
