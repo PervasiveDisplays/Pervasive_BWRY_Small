@@ -23,7 +23,8 @@ the development kits
 
 The driver library can be used stand-alone or with the [Pervasive Displays Library Suite](https://pdls.pervasivedisplays.com/userguide/index.html). 
 
-**Note**: This library requires [PDLS Common](https://github.com/PervasiveDisplays/PDLS_Common).
+> **Note** 
+> This library requires [PDLS Common](https://github.com/PervasiveDisplays/PDLS_Common).
 
 ## Documentation
 
@@ -68,7 +69,7 @@ Hardware
 
 **Copyright** &copy; Pervasive Displays, 2010-2025
 
-For exclusive use with Pervasive Displays screens
+*For exclusive use with Pervasive Displays screens*
 
 **Licence** [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](./LICENCE.md)
 
