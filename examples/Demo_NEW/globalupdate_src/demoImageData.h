@@ -8,6 +8,10 @@
 #include "image_data\154E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	5776
+#elif(SCRN==206)   //2.06"
+#include "image_data\206E5SE_testimage.c"
+#define BW_monoBuffer        (uint8_t *) & testImage
+#define frameSize	7936
 #elif(SCRN==213)   //2.13"
 #include "image_data\213E5SE_testimage.c"
 #define frameSize	5512

@@ -1,15 +1,12 @@
-
-
 #include "Pervasive_BWRY_Small.h"
 
 // DEMO Image Set <Comment out when in User Mode>
-// Screen Size: 154, 213, 266, 417
-#define SCRN 154
+// Screen Size: 154, 206, 213, 266, 417
+#define SCRN 206
 #include "globalupdate_src/demoImageData.h"
 
 
-Pervasive_BWRY_Small myDriver(eScreen_EPD_154_QS_0F, boardRaspberryPiPico_RP2040);
-// Pervasive_BWRY_Small myDriver(eScreen_EPD_213_QS_0F, boardRaspberryPiPico_RP2040);
+Pervasive_BWRY_Small myDriver(eScreen_EPD_206_QS_06, boardRaspberryPiPico_RP2040);
 // Pervasive_BWRY_Small myDriver(eScreen_EPD_266_QS_0F, boardRaspberryPiPico_RP2040);
 // Pervasive_BWRY_Small myDriver(eScreen_EPD_417_QS_0A, boardRaspberryPiPico_RP2040);
 

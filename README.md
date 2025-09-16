@@ -6,7 +6,7 @@ The driver is specifically designed for the [Pervasive Displays](https://www.per
 
 The **Pervasive_BWRY_Small** supports the screens
 
-* Pervasive Displays iTC colour [black-white-red-yellow](https://www.pervasivedisplays.com/products/?_sft_product_colour=black-white-red-yellow) screens (film `Q`) with sizes of 1.54, 2.13 and 2.66";
+* Pervasive Displays iTC colour [black-white-red-yellow](https://www.pervasivedisplays.com/products/?_sft_product_colour=black-white-red-yellow) screens (film `Q`) with sizes of 1.54, 2.06, 2.13 and 2.66, 4.2";
 
 the extension boards
 

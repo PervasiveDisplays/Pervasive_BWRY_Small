@@ -5,9 +5,7 @@
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
 ///
-/// @author Rei Vilo
-/// @date 21 Jan 2025
-/// @version 902
+/// @version 904
 ///
 /// @copyright (c) Pervasive Displays, 2010-2025
 /// @copyright All rights reserved
@@ -59,6 +57,7 @@
 /// @see https://www.pervasivedisplays.com/products/?_sft_etc_itc=itc&_sft_product_colour=black-white-red-yellow
 /// @{
 ///
+#define eScreen_EPD_206_QS_06 SCREEN(SIZE_206, FILM_Q, DRIVER_6) ///< reference 206-QS-06
 #define eScreen_EPD_154_QS_0F SCREEN(SIZE_154, FILM_Q, DRIVER_F) ///< reference 154-QS-0F
 #define eScreen_EPD_213_QS_0F SCREEN(SIZE_213, FILM_Q, DRIVER_F) ///< reference 213-QS-0F
 #define eScreen_EPD_266_QS_0F SCREEN(SIZE_266, FILM_Q, DRIVER_F) ///< reference 266-QS-0F
