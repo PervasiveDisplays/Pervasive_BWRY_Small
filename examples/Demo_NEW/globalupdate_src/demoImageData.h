@@ -24,4 +24,8 @@
 #include "image_data\417E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	30000
+#elif(SCRN==437)   //4.37"
+#include "image_data\437E5SE_testimage.c"
+#define BW_monoBuffer        (uint8_t *) & testImage
+#define frameSize	21120
 #endif

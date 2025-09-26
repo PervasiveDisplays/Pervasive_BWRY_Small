@@ -5,7 +5,7 @@
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
 ///
-/// @version 904
+/// @version 905
 ///
 /// @copyright (c) Pervasive Displays, 2010-2025
 /// @copyright All rights reserved
@@ -30,7 +30,7 @@
 /// @n All rights reserved
 ///
 /// @see Application notes
-/// * [Application Note Small Size for Spectra 4](https://www.pervasivedisplays.com/wp-content/uploads/2023/02/ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf)
+/// * 
 ///
 
 // SDK and configuration
@@ -47,7 +47,7 @@
 ///
 /// @brief Library release number
 ///
-#define DRIVER_BWRY_SMALL_RELEASE 902
+#define DRIVER_BWRY_SMALL_RELEASE 905
 
 ///
 /// @name List of supported screens
@@ -62,6 +62,7 @@
 #define eScreen_EPD_213_QS_0F SCREEN(SIZE_213, FILM_Q, DRIVER_F) ///< reference 213-QS-0F
 #define eScreen_EPD_266_QS_0F SCREEN(SIZE_266, FILM_Q, DRIVER_F) ///< reference 266-QS-0F
 #define eScreen_EPD_417_QS_0A SCREEN(SIZE_417, FILM_Q, DRIVER_A) ///< reference 417-QS-0A
+#define eScreen_EPD_437_QS_0B SCREEN(SIZE_437, FILM_Q, DRIVER_B) ///< reference 437-QS-0B
 /// @}
 
 ///
