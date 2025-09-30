@@ -5,27 +5,27 @@
 
 // Load Normal Update Images
 #if (SCRN==154)   //1.54"
-#include "image_data\154E5SE_testimage.c"
+#include "image_data/154E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	5776
 #elif(SCRN==206)   //2.06"
-#include "image_data\206E5SE_testimage.c"
+#include "image_data/206E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	7936
 #elif(SCRN==213)   //2.13"
-#include "image_data\213E5SE_testimage.c"
+#include "image_data/213E5SE_testimage.c"
 #define frameSize	5512
 #define BW_monoBuffer        (uint8_t *) & testImage
 #elif(SCRN==266)   //2.66"
-#include "image_data\266E5SE_testimage.c"
+#include "image_data/266E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	11248
 #elif(SCRN==417)   //4.17"
-#include "image_data\417E5SE_testimage.c"
+#include "image_data/417E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	30000
 #elif(SCRN==437)   //4.37"
-#include "image_data\437E5SE_testimage.c"
+#include "image_data/437E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	21120
 #endif
