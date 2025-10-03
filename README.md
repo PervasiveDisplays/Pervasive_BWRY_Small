@@ -1,7 +1,6 @@
 # Pervasive Displays Library Suite - Driver for screens with colour black-white-red-yellow
 
-[![](https://img.shields.io/badge/-Knowledge_Base-
-orange)](https://docs.pervasivedisplays.com/knowledge/)
+[![](https://img.shields.io/badge/-Knowledge_Base-orange)](https://docs.pervasivedisplays.com/knowledge/)
 
 The driver is specifically designed for the [Pervasive Displays](https://www.pervasivedisplays.com) e-paper screens, extension boards and evaluation kits.
 
