@@ -1,8 +1,10 @@
 # Pervasive Displays Library Suite - Driver for screens with colour black-white-red-yellow
 
+[![](https://img.shields.io/badge/-Knowledge_Base-orange)](https://docs.pervasivedisplays.com/knowledge/)
+
 The driver is specifically designed for the [Pervasive Displays](https://www.pervasivedisplays.com) e-paper screens, extension boards and evaluation kits.
 
-![](https://pdls.pervasivedisplays.com/userguide/img/Logo_PDI_text_320.png)
+![](https://docs.pervasivedisplays.com/knowledge/img/Pervasive_Displays_logo_gray.png)
 
 The **Pervasive_BWRY_Small** supports the screens
 
@@ -26,8 +28,8 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 
 ## Documentation
 
-* [Application Note Small Size for Spectra 4](https://www.pervasivedisplays.com/wp-content/uploads/2023/02/ApplicationNote_Spectra_4_smallSize_EPD_v01_20230522.pdf)
-* [Pervasive Displays Technical Wiki](https://docs.pervasivedisplays.com/) 
+* [![](https://img.shields.io/badge/-Knowledge_Base-
+orange)](https://docs.pervasivedisplays.com/knowledge/)
 * [Pervasive Displays, Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
 * [Product line](https://www.pervasivedisplays.com/products/)
 
@@ -65,11 +67,9 @@ Hardware
 
 ## Licence
 
-**Copyright** &copy; Pervasive Displays, 2010-2025
+**Copyright** &copy; Pervasive Displays, 2021-2025
 
 For exclusive use with Pervasive Displays screens
 
 **Licence** [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](./LICENCE.md)
-
-**Portions** &copy; Rei Vilo, 2010-2025
 
