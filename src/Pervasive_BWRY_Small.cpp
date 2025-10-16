@@ -437,6 +437,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
 #if (DEBUG_OTP == 1) // Debug COG_data
     debugOTP(COG_data, _readBytes, COG_BWRY_SMALL, SCREEN_DRIVER(u_eScreen_EPD));
 #endif // DEBUG_OTP
+	hV_HAL_SPI3_end();
 }
 
 void Pervasive_BWRY_Small::COG_initial()
