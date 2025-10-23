@@ -84,7 +84,7 @@
 ///
 class Pervasive_BWRY_Small : public Driver_EPD_Virtual
 {
-public:
+  public:
 
     ///
     /// @brief Constructor
@@ -120,9 +120,9 @@ public:
 
     /// @}
 
-protected:
+  protected:
 
-private:
+  private:
 
     // Variables and functions specific to the screen
     uint8_t COG_data[112]; // OTP
