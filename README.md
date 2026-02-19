@@ -69,7 +69,7 @@ Hardware
 
 ## Licence
 
-**Copyright** &copy; Pervasive Displays Inc., 2021-2025
+**Copyright** &copy; Pervasive Displays Inc., 2021-2026
 
 *For exclusive use with Pervasive Displays screens*
 

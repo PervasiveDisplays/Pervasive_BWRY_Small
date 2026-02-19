@@ -7,7 +7,7 @@
 ///
 /// @version 905
 ///
-/// @copyright (c) Pervasive Displays Inc., 2021-2025
+/// @copyright (c) Pervasive Displays Inc., 2021-2026
 /// @copyright All rights reserved
 /// @copyright For exclusive use with Pervasive Displays screens
 ///
