@@ -64,13 +64,8 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     {
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
-            _chipId = 0x0302;
-            _readBytes = 48;
-            break;
-
         case eScreen_EPD_266_QS_0F: // 2.66”
-
-            _chipId = 0x8302;
+            _chipId = 0x0302;
             _readBytes = 48;
             break;
 
