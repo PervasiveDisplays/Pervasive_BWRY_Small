@@ -32,7 +32,7 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 
 * [![](https://img.shields.io/badge/-Knowledge_Base-
 orange)](https://docs.pervasivedisplays.com/knowledge/)
-* [Pervasive Displays, Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
+* [Pervasive Displays Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
 * [Product line](https://www.pervasivedisplays.com/products/)
 
 ## Support
@@ -69,9 +69,9 @@ Hardware
 
 ## Licence
 
-**Copyright** &copy; Pervasive Displays, 2021-2025
+**Copyright** &copy; Pervasive Displays Inc., 2021-2026
 
-For exclusive use with Pervasive Displays screens
+*For exclusive use with Pervasive Displays screens*
 
 **Licence** [Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](./LICENCE.md)
 
