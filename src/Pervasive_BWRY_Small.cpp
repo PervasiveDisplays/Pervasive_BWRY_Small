@@ -115,6 +115,10 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
     hV_HAL_Serial_crlf();
+	
+    if (ui16 == 0x8302)
+	    ui16 = 0x0302;
+	
     if (ui16 == _chipId)
     {
         hV_HAL_log(LEVEL_INFO, "OTP check 1 passed - Chip ID %04x as expected", ui16);
