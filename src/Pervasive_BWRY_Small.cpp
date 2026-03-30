@@ -443,7 +443,7 @@ void Pervasive_BWRY_Small::COG_initial()
 {
     // Application note § 3. COG initial
     b_sendCommandData8(0xe0, 0x02);
-    b_sendCommandData8(0xe6, u_temperature); // 25C temp
+    b_sendCommandData8(0xe6, u_temperature); // default is 25C but requires an external sensor for ambient temp
 
     switch (u_eScreen_EPD)
     {
