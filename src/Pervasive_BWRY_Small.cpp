@@ -22,6 +22,7 @@
 // Release 900: Added new driver library
 // Release 904: Added support for 206-QS-06
 // Release 905: Added support for 437-QS-0B
+// Release 908: Fixed library version with tag 
 //
 
 // Header
