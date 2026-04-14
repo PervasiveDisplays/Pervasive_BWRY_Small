@@ -22,7 +22,7 @@
 // Release 900: Added new driver library
 // Release 904: Added support for 206-QS-06
 // Release 905: Added support for 437-QS-0B
-// Release 908: Fixed library version with tag 
+// Release 908: Fixed library version with tag
 //
 
 // Header
@@ -40,10 +40,12 @@ void Pervasive_BWRY_Small::COG_reset()
     {
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
+
             b_reset(10, 10, 20, 40, 10);
             break;
 
         default:
+
             b_reset(20, 10, 20, 10, 10);
             break;
     }
@@ -117,10 +119,12 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
     hV_HAL_Serial_crlf();
-	
+
     if (ui16 == 0x8302)
-	    ui16 = 0x0302;
-	
+    {
+        ui16 = 0x0302;
+    }
+
     if (ui16 == _chipId)
     {
         hV_HAL_log(LEVEL_INFO, "OTP check 1 passed - Chip ID %04x as expected", ui16);
