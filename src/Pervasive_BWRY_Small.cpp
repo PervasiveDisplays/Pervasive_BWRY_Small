@@ -66,6 +66,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F: // 2.66”
+
             _chipId = 0x0302;
             _readBytes = 48;
             break;
@@ -428,7 +429,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     {
         digitalWrite(b_pin.panelCS, LOW); // Select
         COG_data[index] = hV_HAL_SPI3_read(); // Read OTP
-        hV_HAL_log(LEVEL_INFO, "OTP memory [%i] : 0x%02x", index, COG_data[index]);
+        // hV_HAL_log(LEVEL_INFO, "OTP memory [%i] : 0x%02x", index, COG_data[index]);
         digitalWrite(b_pin.panelCS, HIGH); // Unselect
     }
 
@@ -449,6 +450,7 @@ void Pervasive_BWRY_Small::COG_initial()
     switch (u_eScreen_EPD)
     {
         case eScreen_EPD_206_QS_06:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x01, &COG_data[16], 2);
@@ -471,6 +473,7 @@ void Pervasive_BWRY_Small::COG_initial()
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x01, &COG_data[16], 1);
@@ -494,6 +497,7 @@ void Pervasive_BWRY_Small::COG_initial()
             break;
 
         case eScreen_EPD_417_QS_0A:
+
             b_sendIndexData(0x01, &COG_data[16], 1);
             b_sendIndexData(0x00, &COG_data[17], 2);
             b_sendIndexData(0x03, &COG_data[30], 3);
@@ -510,6 +514,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_waitBusy();
 
         case eScreen_EPD_437_QS_0B:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x00, &COG_data[17], 2);
@@ -527,6 +532,7 @@ void Pervasive_BWRY_Small::COG_initial()
             break;
 
         default:
+
             break;
     }
 }
@@ -546,6 +552,7 @@ void Pervasive_BWRY_Small::COG_update()
             break;
 
         case eScreen_EPD_437_QS_0B:
+
             b_sendCommandData8(0xff, 0xa5); //
             b_sendIndexData(0xef, &COG_data[43], 8);
             b_sendCommandData8(0xc3, COG_data[64]);
@@ -594,6 +601,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
     switch (u_eScreen_EPD)
     {
         case eScreen_EPD_206_QS_06:
+
             b_sendCommandData8(0x07, 0xa5);
             hV_HAL_delayMilliseconds(50);
             // clear all IOs to LOW
@@ -603,6 +611,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_266_QS_0F:
+
             // clear all IOs to LOW
             // cut Vcc off
             // delay 100 ms
@@ -611,6 +620,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_417_QS_0A:
+
             hV_HAL_delayMilliseconds(5000);
             b_sendIndexData(0x00, &COG_data[26], 2); // PSR
             hV_HAL_delayMilliseconds(100);
@@ -621,6 +631,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_437_QS_0B:
+
             hV_HAL_delayMilliseconds(200);
             // clear all IOs to LOW
             // delay 50 ms
