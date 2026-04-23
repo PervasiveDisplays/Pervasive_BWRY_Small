@@ -14,7 +14,7 @@ The **Pervasive_BWRY_Small** supports the screens
 
 the extension boards
 
-* Pervasive Displays [EPD Extension Kit Gen 3 (EXT3 or EXT3.1)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-3-EXT3/),
+* Pervasive Displays [EPD Extension Kit Gen 3 (EXT3 / EXT3.1 / EXT3.2)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-3-EXT3/),
 * Pervasive Displays [EPD Extension Kit Gen 4 (EXT4)](https://www.pervasivedisplays.com/product/epd-extension-kit-gen-4-EXT4/) and EXT4-to-Nano adapter boards;
 
 the development kits
@@ -63,7 +63,7 @@ Software
 
 Hardware
 
-* Pervasive Displays EPD Extension Kit Gen 3 (EXT3 or EXT3.1)
+* Pervasive Displays EPD Extension Kit Gen 3 (EXT3 / EXT3.1 / EXT3.2)
 * Pervasive Displays EPD Extension Kit Gen 4 (EXT4)
 * Pervasive Displays iTC black-white-red-yellow colour screens (film `Q`)
 
