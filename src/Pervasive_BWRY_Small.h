@@ -5,7 +5,7 @@
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
 ///
-/// @version 905
+/// @version 908
 ///
 /// @copyright (c) Pervasive Displays Inc., 2021-2026
 /// @copyright All rights reserved
@@ -47,7 +47,7 @@
 ///
 /// @brief Library release number
 ///
-#define DRIVER_BWRY_SMALL_RELEASE 905
+#define DRIVER_BWRY_SMALL_RELEASE 908
 
 ///
 /// @name List of supported screens
