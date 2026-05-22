@@ -10,7 +10,7 @@ The driver is specifically designed for the [Pervasive Displays](https://www.per
 
 The **Pervasive_BWRY_Small** supports the screens
 
-* Pervasive Displays iTC colour [black-white-red-yellow](https://www.pervasivedisplays.com/products/?_sft_product_colour=black-white-red-yellow) screens (film `Q`) with sizes of 1.54, 2.06, 2.13 and 2.66, 4.2, 4.37";
+* Pervasive Displays iTC colour [black-white-red-yellow](https://www.pervasivedisplays.com/products/?_sft_product_colour=black-white-red-yellow) screens (film `Q`) with sizes of 1.52, 1.54, 2.06, 2.13 and 2.66, 4.2, 4.37";
 
 the extension boards
 
@@ -30,8 +30,7 @@ The driver library can be used stand-alone or with the [Pervasive Displays Libra
 
 ## Documentation
 
-* [![](https://img.shields.io/badge/-Knowledge_Base-
-orange)](https://docs.pervasivedisplays.com/knowledge/)
+* [Knowledge Base](https://docs.pervasivedisplays.com/knowledge/) [![](https://img.shields.io/badge/-Knowledge_Base-orange)](https://docs.pervasivedisplays.com/knowledge/)
 * [Pervasive Displays Inc. (龍亭新技股份有限公司)](https://www.pervasivedisplays.com/)
 * [Product line](https://www.pervasivedisplays.com/products/)
 
