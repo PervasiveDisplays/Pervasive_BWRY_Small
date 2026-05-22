@@ -5,7 +5,7 @@
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
 ///
-/// @version 908
+/// @version 909
 ///
 /// @copyright (c) Pervasive Displays Inc., 2021-2026
 /// @copyright All rights reserved
@@ -47,7 +47,7 @@
 ///
 /// @brief Library release number
 ///
-#define DRIVER_BWRY_SMALL_RELEASE 908
+#define DRIVER_BWRY_SMALL_RELEASE 909
 
 ///
 /// @name List of supported screens
@@ -57,8 +57,9 @@
 /// @see https://www.pervasivedisplays.com/products/?_sft_etc_itc=itc&_sft_product_colour=black-white-red-yellow
 /// @{
 ///
-#define eScreen_EPD_206_QS_06 SCREEN(SIZE_206, FILM_Q, DRIVER_6) ///< reference 206-QS-06
+#define eScreen_EPD_152_QS_06 SCREEN(SIZE_152, FILM_Q, DRIVER_6) ///< reference 154-QS-0F
 #define eScreen_EPD_154_QS_0F SCREEN(SIZE_154, FILM_Q, DRIVER_F) ///< reference 154-QS-0F
+#define eScreen_EPD_206_QS_06 SCREEN(SIZE_206, FILM_Q, DRIVER_6) ///< reference 206-QS-06
 #define eScreen_EPD_213_QS_0F SCREEN(SIZE_213, FILM_Q, DRIVER_F) ///< reference 213-QS-0F
 #define eScreen_EPD_266_QS_0F SCREEN(SIZE_266, FILM_Q, DRIVER_F) ///< reference 266-QS-0F
 #define eScreen_EPD_417_QS_0A SCREEN(SIZE_417, FILM_Q, DRIVER_A) ///< reference 417-QS-0A

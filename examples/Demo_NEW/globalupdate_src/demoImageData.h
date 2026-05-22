@@ -4,7 +4,11 @@
 */
 
 // Load Normal Update Images
-#if (SCRN==154)   //1.54"
+#if (SCRN==152)   //1.52"
+#include "image_data/152E5SE_testimage.c"
+#define BW_monoBuffer        (uint8_t *) & testImage
+#define frameSize	10000
+#elif (SCRN==154)   //1.54"
 #include "image_data/154E5SE_testimage.c"
 #define BW_monoBuffer        (uint8_t *) & testImage
 #define frameSize	5776
