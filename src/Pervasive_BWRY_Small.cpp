@@ -22,6 +22,8 @@
 // Release 900: Added new driver library
 // Release 904: Added support for 206-QS-06
 // Release 905: Added support for 437-QS-0B
+// Release 908: Fixed library version with tag
+// Release 909: Added support for 152-QS-06
 //
 
 // Header
@@ -39,10 +41,12 @@ void Pervasive_BWRY_Small::COG_reset()
     {
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
+
             b_reset(10, 10, 20, 40, 10);
             break;
 
         default:
+
             b_reset(20, 10, 20, 10, 10);
             break;
     }
@@ -66,7 +70,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             _chipId = 0x4801;
             _readBytes = 48;
             break;
-			
+
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F: // 2.66”
@@ -121,12 +125,12 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
     hV_HAL_Serial_crlf();
-	
+
     if (ui16 == 0x8302)
     {
         ui16 = 0x0302;
     }
-	
+
     if (ui16 == _chipId)
     {
         hV_HAL_log(LEVEL_INFO, "OTP check 1 passed - Chip ID %04x as expected", ui16);
@@ -294,36 +298,36 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
 
         b_waitBusy();
 
-		if (_chipId == 0xc901)
-		{
-			hV_HAL_GPIO_clear(b_pin.panelDC); // Command
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0xf6);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+        if (_chipId == 0xc901)
+        {
+            hV_HAL_GPIO_clear(b_pin.panelDC); // Command
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0xf6);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
-			hV_HAL_GPIO_set(b_pin.panelDC); // Data
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0x0d);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0x80);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
-		}
-		else if (_chipId == 0x4801)
-		{
-			hV_HAL_GPIO_clear(b_pin.panelDC); // Command
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0xf6);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+            hV_HAL_GPIO_set(b_pin.panelDC); // Data
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0x0d);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0x80);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+        }
+        else if (_chipId == 0x4801)
+        {
+            hV_HAL_GPIO_clear(b_pin.panelDC); // Command
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0xf6);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
-			hV_HAL_GPIO_set(b_pin.panelDC); // Data
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0x2d);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
-			hV_HAL_GPIO_clear(b_pin.panelCS); // Select
-			hV_HAL_SPI3_write(0x80);
-			hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
-		}
+            hV_HAL_GPIO_set(b_pin.panelDC); // Data
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0x2d);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+            hV_HAL_GPIO_clear(b_pin.panelCS); // Select
+            hV_HAL_SPI3_write(0x80);
+            hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
+        }
 
         hV_HAL_GPIO_clear(b_pin.panelDC); // Command
         hV_HAL_GPIO_clear(b_pin.panelCS); // Select
@@ -453,16 +457,16 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     {
         digitalWrite(b_pin.panelCS, LOW); // Select
         COG_data[index] = hV_HAL_SPI3_read(); // Read OTP
-        hV_HAL_log(LEVEL_INFO, "OTP memory [%i] : 0x%02x", index, COG_data[index]);
+        // hV_HAL_log(LEVEL_INFO, "OTP memory [%i] : 0x%02x", index, COG_data[index]);
         digitalWrite(b_pin.panelCS, HIGH); // Unselect
     }
 
+    hV_HAL_SPI3_end();
     u_flagOTP = true;
 
 #if (DEBUG_OTP == 1) // Debug COG_data
     debugOTP(COG_data, _readBytes, COG_BWRY_SMALL, SCREEN_DRIVER(u_eScreen_EPD));
 #endif // DEBUG_OTP
-    hV_HAL_SPI3_end();
 }
 
 void Pervasive_BWRY_Small::COG_initial()
@@ -475,6 +479,7 @@ void Pervasive_BWRY_Small::COG_initial()
     {
         case eScreen_EPD_152_QS_06: // 1.52”
         case eScreen_EPD_206_QS_06:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x01, &COG_data[16], 2);
@@ -497,6 +502,7 @@ void Pervasive_BWRY_Small::COG_initial()
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x01, &COG_data[16], 1);
@@ -520,6 +526,7 @@ void Pervasive_BWRY_Small::COG_initial()
             break;
 
         case eScreen_EPD_417_QS_0A:
+
             b_sendIndexData(0x01, &COG_data[16], 1);
             b_sendIndexData(0x00, &COG_data[17], 2);
             b_sendIndexData(0x03, &COG_data[30], 3);
@@ -536,6 +543,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_waitBusy();
 
         case eScreen_EPD_437_QS_0B:
+
             b_sendCommand8(0xa5);
             b_waitBusy();
             b_sendIndexData(0x00, &COG_data[17], 2);
@@ -553,6 +561,7 @@ void Pervasive_BWRY_Small::COG_initial()
             break;
 
         default:
+
             break;
     }
 }
@@ -572,6 +581,7 @@ void Pervasive_BWRY_Small::COG_update()
             break;
 
         case eScreen_EPD_437_QS_0B:
+
             b_sendCommandData8(0xff, 0xa5); //
             b_sendIndexData(0xef, &COG_data[43], 8);
             b_sendCommandData8(0xc3, COG_data[64]);
@@ -621,6 +631,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
     {
         case eScreen_EPD_152_QS_06: // 1.52”
         case eScreen_EPD_206_QS_06:
+
             b_sendCommandData8(0x07, 0xa5);
             hV_HAL_delayMilliseconds(50);
             // clear all IOs to LOW
@@ -630,6 +641,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_266_QS_0F:
+
             // clear all IOs to LOW
             // cut Vcc off
             // delay 100 ms
@@ -638,6 +650,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_417_QS_0A:
+
             hV_HAL_delayMilliseconds(5000);
             b_sendIndexData(0x00, &COG_data[26], 2); // PSR
             hV_HAL_delayMilliseconds(100);
@@ -648,6 +661,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_437_QS_0B:
+
             hV_HAL_delayMilliseconds(200);
             // clear all IOs to LOW
             // delay 50 ms
