@@ -24,8 +24,8 @@
 // Release 905: Added support for 437-QS-0B
 // Release 908: Fixed library version with tag
 // Release 909: Added support for 152-QS-06
+// Release 910: Added support for 290-QS-0F
 //
-
 // Header
 #include "Pervasive_BWRY_Small.h"
 
@@ -70,7 +70,12 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             _chipId = 0x4801;
             _readBytes = 48;
             break;
-
+			
+        case eScreen_EPD_290_QS_0F: // 2.9”
+            _chipId = 0x8502;
+            _readBytes = 48;
+            break;
+			
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F: // 2.66”
@@ -146,7 +151,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     uint8_t ui8 = 0;
     uint16_t offset = 0x0000;
 
-    if ((_chipId == 0x8302) or (_chipId == 0x0302))
+    if ((_chipId == 0x8302) or (_chipId == 0x0302) or (_chipId == 0x8502))
     {
         hV_HAL_GPIO_clear(b_pin.panelDC); // Command
         hV_HAL_GPIO_clear(b_pin.panelCS); // Select
@@ -498,7 +503,29 @@ void Pervasive_BWRY_Small::COG_initial()
             b_sendIndexData(0x62, &COG_data[43], 2);
             b_sendCommandData8(0xe9, 0x01);
             break;
-
+			
+        case eScreen_EPD_290_QS_0F:
+            b_sendCommand8(0xa5);
+            b_waitBusy();
+            b_sendIndexData(0x01, &COG_data[16], 1);
+            b_sendIndexData(0x00, &COG_data[17], 2);
+            b_sendIndexData(0x61, &COG_data[19], 4);
+            b_sendIndexData(0x06, &COG_data[23], 7);
+            b_sendIndexData(0x03, &COG_data[30], 3);
+            b_sendIndexData(0xe7, &COG_data[33], 1);
+            b_sendIndexData(0x65, &COG_data[34], 4);
+            b_sendIndexData(0x30, &COG_data[38], 1);
+            b_sendIndexData(0x50, &COG_data[39], 1);
+            b_sendIndexData(0x60, &COG_data[40], 2);
+            b_sendIndexData(0xe3, &COG_data[42], 1);
+            b_sendIndexData(0x4d, &COG_data[43], 1);
+            b_sendIndexData(0xb4, &COG_data[44], 1);
+            b_sendIndexData(0xb5, &COG_data[45], 1);
+            b_sendIndexData(0xb6, &COG_data[46], 1);
+            b_sendIndexData(0xbe, &COG_data[47], 1);
+            b_sendCommandData8(0xe9, 0x01);
+            break;
+			
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F:
@@ -641,7 +668,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
             break;
 
         case eScreen_EPD_266_QS_0F:
-
+        case eScreen_EPD_290_QS_0F:
             // clear all IOs to LOW
             // cut Vcc off
             // delay 100 ms
