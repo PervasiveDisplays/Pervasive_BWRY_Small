@@ -568,6 +568,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_sendCommandData8(0xe9, 0x01);
             b_sendCommand8(0x04); // Power on
             b_waitBusy();
+			break;
 
         case eScreen_EPD_437_QS_0B:
 
