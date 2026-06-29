@@ -25,6 +25,7 @@
 // Release 908: Fixed library version with tag
 // Release 909: Added support for 152-QS-06
 // Release 910: Added support for 290-QS-0F
+// Release 911: Fixed code gap for 417
 //
 // Header
 #include "Pervasive_BWRY_Small.h"
