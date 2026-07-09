@@ -461,10 +461,10 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     // Populate COG_data
     for (uint16_t index = 1; index < _readBytes; index += 1)
     {
-        digitalWrite(b_pin.panelCS, LOW); // Select
+        hV_HAL_GPIO_clear(b_pin.panelCS); // Select
         COG_data[index] = hV_HAL_SPI3_read(); // Read OTP
         // hV_HAL_log(LEVEL_INFO, "OTP memory [%i] : 0x%02x", index, COG_data[index]);
-        digitalWrite(b_pin.panelCS, HIGH); // Unselect
+        hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
     }
 
     hV_HAL_SPI3_end();
