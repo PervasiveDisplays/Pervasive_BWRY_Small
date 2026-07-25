@@ -71,12 +71,12 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             _chipId = 0x4801;
             _readBytes = 48;
             break;
-			
+
         case eScreen_EPD_290_QS_0F: // 2.9”
             _chipId = 0x8502;
             _readBytes = 48;
             break;
-			
+
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F: // 2.66”
@@ -504,7 +504,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_sendIndexData(0x62, &COG_data[43], 2);
             b_sendCommandData8(0xe9, 0x01);
             break;
-			
+
         case eScreen_EPD_290_QS_0F:
             b_sendCommand8(0xa5);
             b_waitBusy();
@@ -526,7 +526,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_sendIndexData(0xbe, &COG_data[47], 1);
             b_sendCommandData8(0xe9, 0x01);
             break;
-			
+
         case eScreen_EPD_154_QS_0F: // 1.54”
         case eScreen_EPD_213_QS_0F: // 2.13”
         case eScreen_EPD_266_QS_0F:
@@ -569,7 +569,7 @@ void Pervasive_BWRY_Small::COG_initial()
             b_sendCommandData8(0xe9, 0x01);
             b_sendCommand8(0x04); // Power on
             b_waitBusy();
-			break;
+            break;
 
         case eScreen_EPD_437_QS_0B:
 
