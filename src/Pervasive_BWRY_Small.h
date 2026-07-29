@@ -5,7 +5,7 @@
 /// @details Project Pervasive Displays Library Suite
 /// @n Based on highView technology
 ///
-/// @version 911
+/// @version 1000
 ///
 /// @copyright (c) Pervasive Displays Inc., 2021-2026
 /// @copyright All rights reserved
@@ -36,8 +36,8 @@
 // SDK and configuration
 #include "PDLS_Common.h"
 
-#if (PDLS_COMMON_RELEASE < 902)
-#error Required PDLS_COMMON_RELEASE 902
+#if (PDLS_COMMON_RELEASE < 1000)
+#error Required PDLS_COMMON_RELEASE 1000
 #endif // PDLS_COMMON_RELEASE
 
 // Driver
@@ -47,7 +47,7 @@
 ///
 /// @brief Library release number
 ///
-#define DRIVER_BWRY_SMALL_RELEASE 910
+#define DRIVER_BWRY_SMALL_RELEASE 1000
 
 ///
 /// @name List of supported screens
