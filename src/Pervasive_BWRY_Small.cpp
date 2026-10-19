@@ -27,6 +27,7 @@
 // Release 910: Added support for 290-QS-0F
 // Release 911: Fixed code gap for 417
 // Release 1000: Synchronised with PDLS_Common
+// Release 1011: Improved trace granualarity
 //
 
 // Header
@@ -132,7 +133,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     ui16 |= hV_HAL_SPI3_read();
     hV_HAL_GPIO_set(b_pin.panelCS); // Unselect
 
-    hV_HAL_Serial_crlf();
+    hV_HAL_log_crlf();
 
     if (ui16 == 0x8302)
     {
@@ -145,7 +146,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     }
     else
     {
-        hV_HAL_Serial_crlf();
+        hV_HAL_log_crlf();
         hV_HAL_log(LEVEL_CRITICAL, "OTP check 1 failed - Chip ID 0x%04x, expected 0x%04x", ui16, _chipId);
         hV_HAL_exit(0x01);
     }
@@ -196,7 +197,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
         }
         else
         {
-            hV_HAL_Serial_crlf();
+            hV_HAL_log_crlf();
             hV_HAL_log(LEVEL_CRITICAL, "OTP check 2 failed - Bank %i, first 0x%02x, expected 0x%02x", 0, COG_data[0], 0xa5);
             hV_HAL_exit(0x01);
         }
@@ -264,7 +265,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             }
             else
             {
-                hV_HAL_Serial_crlf();
+                hV_HAL_log_crlf();
                 hV_HAL_log(LEVEL_CRITICAL, "OTP check 2 failed - Bank %i, first 0x%02x, expected 0x%02x", 0, COG_data[0], 0xa5);
                 hV_HAL_exit(0x01);
             }
@@ -377,7 +378,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             }
             else
             {
-                hV_HAL_Serial_crlf();
+                hV_HAL_log_crlf();
                 hV_HAL_log(LEVEL_CRITICAL, "OTP check 2 failed - Bank %i, first 0x%02x, expected 0x%02x", 0, COG_data[0], 0xa5);
                 hV_HAL_exit(0x01);
             }
@@ -452,7 +453,7 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
             }
             else
             {
-                hV_HAL_Serial_crlf();
+                hV_HAL_log_crlf();
                 hV_HAL_log(LEVEL_CRITICAL, "OTP check 2 failed - Bank %i, first 0x%02x, expected 0x%02x", 0, COG_data[0], 0xa5);
                 hV_HAL_exit(0x01);
             }
@@ -472,9 +473,11 @@ void Pervasive_BWRY_Small::COG_getDataOTP()
     hV_HAL_SPI3_end();
     u_flagOTP = true;
 
-#if (DEBUG_OTP == 1) // Debug COG_data
+#if (DEBUG_LOG > 0)
+#if (DEBUG_OTP > 0) // Debug COG_data
     debugOTP(COG_data, _readBytes, COG_BWRY_SMALL, SCREEN_DRIVER(u_eScreen_EPD));
 #endif // DEBUG_OTP
+#endif // DEBUG_LOG
 }
 
 void Pervasive_BWRY_Small::COG_initial()
@@ -673,6 +676,7 @@ void Pervasive_BWRY_Small::COG_stopDCDC()
 
         case eScreen_EPD_266_QS_0F:
         case eScreen_EPD_290_QS_0F:
+
             // clear all IOs to LOW
             // cut Vcc off
             // delay 100 ms
